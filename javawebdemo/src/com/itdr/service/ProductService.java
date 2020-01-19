@@ -4,4 +4,8 @@ import com.itdr.common.ResponseCode;
 
 public interface ProductService {
     ResponseCode getAllProduct();
+
+    ResponseCode toType(String id);
+
+    ResponseCode fuzzyquery(String key);
 }

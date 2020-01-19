@@ -29,18 +29,35 @@ private ProductService productService= new ProductServiceImpl();
             case "getall":
                 getAllProduct(request,response);
                 break;
-
+            case "totype":
+                toType(request,response);
+                break;
+            case "fuzzyquery":
+                fuzzyquery(request,response);
+                break;
         }
     }
     //获取所有商品信息
     private void getAllProduct(HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException {
         ResponseCode allProduct = productService.getAllProduct();
-//        HttpSession session = request.getSession();
-//        Users attribute = (Users)session.getAttribute("us");
-//        request.setAttribute("us",attribute);
 
         request.setAttribute("plist",allProduct);
         request.getRequestDispatcher("/WEB-INF/plist.jsp").forward(request,response);
     }
+    //商品下架
+    private void toType(HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException {
+        String id = request.getParameter("id");
+        ResponseCode allProduct = productService.toType(id);
+        response.getWriter().write(allProduct.getData().toString());
+    }
+    //模糊查询
+    private void fuzzyquery(HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException {
+        String key = request.getParameter("key");
+        ResponseCode allProduct = productService.fuzzyquery(key);
+        
+        request.setAttribute("plist",allProduct);
+        request.getRequestDispatcher("/WEB-INF/plist.jsp").forward(request,response);
 
+
+    }
 }

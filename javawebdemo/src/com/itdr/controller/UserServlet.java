@@ -43,7 +43,6 @@ private UserService userService= new UserSerciveImpl();
         Users data = login.getData();
         session.setAttribute("us",data);
 
-        request.setAttribute("user",login);
         request.getRequestDispatcher("/WEB-INF/home.jsp").forward(request,response);
     }
     //获取管理员信息

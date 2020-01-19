@@ -48,4 +48,13 @@ public static <T> ResponseCode toDefeated(Integer status,String msg){
     public void setMsg(String msg) {
         this.msg = msg;
     }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "status:" + status +
+                ", data:" + data +
+                ", msg:'" + msg + '\'' +
+                '}';
+    }
 }

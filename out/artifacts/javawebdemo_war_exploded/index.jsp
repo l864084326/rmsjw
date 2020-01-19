@@ -10,39 +10,55 @@
 <head>
     <title>管理员登录</title>
     <style>
+      #a{
+          width: 500px;
+          height: 400px;
+          /*display: flex;*/
+          background-color: cadetblue;
+          margin-left: 350px;
+          margin-top: 85px;
 
-        body{
-            background-image: url("beijing.jpg");
+      }
+        #b{
             display: flex;
 
             justify-content: center;
-            align-items: center;
         }
-        p{
-            size: 20px;
+        #b1{
+            background-color: beige;
+            width: 500px;
+            display: flex;
+
+            justify-content: center;
         }
-        input{
-            width: 180px;
-            height: 30px;
+        #c{
+            margin-left: 160px;
+            margin-top: 50px;
         }
         #button{
-            width: 60px;
-            display: block;
-            position: relative;
-            justify-content: center;
-            margin: auto;
-            top: 30px;
+            display: flex;
+            margin-left: 60px;
+            margin-top: 30px;
+
         }
+
+
     </style>
 </head>
-<body>
-<form action="/backed/user/login" method="post">
 
-    <p>请输入账户名</p>
+
+<body>
+<div id="a">
+    <div id="b"><div id="b1"><h1>咔咔嗯嗯嘟嘟嘟二手车行</h1></div></div>
+    <form action="/backed/user/login" method="post">
+    <div id="c">
+        <p>请输入账户名</p>
         <input type="text" placeholder="账户" name="username">
     <p>请输入密码</p>
         <input type="password" placeholder="密码" name="password">
         <input id="button" type="submit" value="登录">
+    </div>
 </form>
+</div>
 </body>
 </html>
